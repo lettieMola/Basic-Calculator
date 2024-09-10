@@ -8,7 +8,7 @@
 .container{
     width: 100%;
     height: 100vh;
-    background: #e3f9ff;
+    background: #e4b5ee;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,8 +19,18 @@
     
 }
 
+.heading {
+    font-size: 24px; /* Adjust the font size as needed */
+    text-align: center;
+    color: #fff; /* Choose a color that contrasts well with the background */
+    margin-bottom: 20px; /* Space between the heading and the calculator */
+}
+
+
+
+
 .calculator{
-    background: #3a4452;
+    background: rgba(5, 9, 59, 0.9); /* Use rgba for transparency */
     padding: 20px;
     border-radius: 10px;
 
@@ -32,7 +42,7 @@
     width: 60px;
     height: 60px;
     border-radius: 10px;
-    box-shadow: -8px -8px 15px rgba(255,255,255, 0.1), 5px 5px 15px rgba(0,0,0, 0.2) ;
+    box-shadow: -8px -8px 15px rgba(247, 244, 244, 0.1), 5px 5px 15px rgba(0,0,0, 0.2) ;
     background: transparent;
     font-size: 20px;
     color: #ffff;
@@ -51,6 +61,7 @@ form .display input{
     flex: 1;
     font-size: 45px;
     box-shadow: none;
+    background: #0ea4b8;
 }
 
 form input.equal{
@@ -60,3 +71,49 @@ form input.equal{
 form input.operator{
     color: #33ffd8;
 }
+
+  /* Media Queries for responsiveness */
+        /* For mobile phones */
+        @media (max-width: 50px) {
+            .calculator {
+                padding: 10px;
+            }
+
+            .heading {
+                font-size: 20px;
+            }
+
+            form input {
+                width: 22%;
+                height: 50px; /* Smaller buttons on mobile */
+                font-size: 16px; /* Reduce font size for buttons */
+            }
+
+            form .display input {
+                font-size: 30px; /* Adjust display font for mobile */
+                height: 60px; /* Reduce height for the display on mobile */
+            }
+        }
+
+        /* For tablets or larger phones */
+        @media (min-width: 61px) and (max-width: 124px) {
+            .calculator {
+                max-width: 350px;
+            }
+
+            .heading {
+                font-size: 22px;
+            }
+
+            form input {
+                height: 55px; /* Adjusted button size for tablets */
+                font-size: 18px;
+            }
+
+            form .display input {
+                font-size: 32px;
+                height: 70px;
+            }
+        }
+
+       
