@@ -7,10 +7,6 @@ function clearDisplay() {
     document.getElementById('display').value = '';
 }
 
-// function deleteLastCharacter() {
-//     let display = document.getElementById('display');
-//     display.value = display.value.slice(0, -1);
-// }
 
 function calculateResult() {
     let display = document.getElementById('display');
@@ -34,19 +30,27 @@ function calculatePercentage() {
     }
 }
 
-function deleteLastCharacter() {
+function deleteDisplay() {
     let display = document.getElementById('display');
-    let startPos = display.selectionStart;
-    let endPos = display.selectionEnd;
+    let startPos = display.selectionStart;  // Start of selection
+    let endPos = display.selectionEnd;      // End of selection
     let currentValue = display.value;
 
-    if (startPos === endPos) {
-        startPos = Math.max(startPos - 1, 0);
+    // If there's a selection, delete the selected number
+    if (startPos !== endPos) {
+        display.value = currentValue.slice(0, startPos) + currentValue.slice(endPos);
+        display.setSelectionRange(startPos, startPos);  // Set cursor to where deletion happened
+    } 
+    // If no selection, delete the last character before the cursor
+    else {
+        if (startPos > 0) {
+            display.value = currentValue.slice(0, startPos - 1) + currentValue.slice(endPos);
+            display.setSelectionRange(startPos - 1, startPos - 1);  // Set cursor to new position
+        }
     }
-
-    display.value = currentValue.slice(0, startPos) + currentValue.slice(endPos);
-    display.setSelectionRange(startPos, startPos);
 }
+
+
         // Add keyboard input support
         document.addEventListener('keydown', function(event) {
             let key = event.key;
@@ -72,7 +76,7 @@ function deleteLastCharacter() {
                     calculateResult();
                     break;
                 case 'Backspace':
-                    deleteLastCharacter();
+                    deleteDisplay();
                     break;
                 case 'Escape':
                     clearDisplay();

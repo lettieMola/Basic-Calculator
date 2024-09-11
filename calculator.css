@@ -1,119 +1,108 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
-}
-
-.container{
+  }
+  
+  .container{
     width: 100%;
     height: 100vh;
-    background: #e4b5ee;
+    background: #8a8e8f;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+   
+  }
 
-.h1{
-    font-size: 20px;
-    
-}
-
-.heading {
-    font-size: 24px; /* Adjust the font size as needed */
+  .heading {
+    font-size: 30px; 
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
-    color: #fff; /* Choose a color that contrasts well with the background */
+    color: #fff;
     margin-bottom: 20px; /* Space between the heading and the calculator */
 }
-
-
-
-
-.calculator{
-    background: rgba(5, 9, 59, 0.9); /* Use rgba for transparency */
+  
+  .calculator{
+    width: 300px;
+    background: rgb(3, 8, 71); /* transparency */
     padding: 20px;
     border-radius: 10px;
-
-}
-
-.calculator form input{
-    border: 0;
-    outline: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    box-shadow: -8px -8px 15px rgba(247, 244, 244, 0.1), 5px 5px 15px rgba(0,0,0, 0.2) ;
-    background: transparent;
+    
+  
+  }
+  
+  .calculator input {
+     border: 0; 
+     outline: 0;
+     width: 50px;
+     height: 50px;
+     border-radius: 10px;
+     box-shadow: -8px -8px 15px rgba(255,255,255, 0.1), 5px 5px 15px rgba(0,0,0, 0.2) ;
+     cursor: pointer;
+     
+  }
+  
+  
+  
+  #display {
+    /* display: flex; */
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
     font-size: 20px;
-    color: #ffff;
-    cursor: pointer;
-    margin: 10px;
-}
-
-form .display{
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px 0;
-}
-
-form .display input{
     text-align: right;
     flex: 1;
-    font-size: 45px;
+    font-size: 35px;
     box-shadow: none;
-    background: #0ea4b8;
-}
-
-form input.equal{
-    width: 145px;
-}
-
-form input.operator{
-    color: #33ffd8;
-}
-
-  /* Media Queries for responsiveness */
-        /* For mobile phones */
-        @media (max-width: 50px) {
-            .calculator {
-                padding: 10px;
-            }
-
-            .heading {
-                font-size: 20px;
-            }
-
-            form input {
-                width: 22%;
-                height: 50px; /* Smaller buttons on mobile */
-                font-size: 16px; /* Reduce font size for buttons */
-            }
-
-            form .display input {
-                font-size: 30px; /* Adjust display font for mobile */
-                height: 60px; /* Reduce height for the display on mobile */
-            }
-        }
-
-        /* For tablets or larger phones */
-        @media (min-width: 61px) and (max-width: 124px) {
-            .calculator {
-                max-width: 350px;
-            }
-
-            .heading {
-                font-size: 22px;
-            }
-
-            form input {
-                height: 55px; /* Adjusted button size for tablets */
-                font-size: 18px;
-            }
-
-            form .display input {
-                font-size: 32px;
-                height: 70px;
-            }
-        }
-
-       
+  }
+  
+  .btn {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #eee6e6;
+  }
+  
+  .btn:hover {
+    background-color: #05f7f7;
+    /* background-color: #03fdbf; */
+  }
+  
+  button.btn[onclick="clearDisplay()"] {
+    background-color: #f44336; /* New background color for the "C" button */
+    color: white; /* Text color */
+  }
+  
+  button.btn[onclick="clearDisplay()"]:hover {
+    background-color: #9e0808; /* Hover background color */
+  }
+  
+  button.btn[onclick="deleteDisplay()"] {
+    background-color: #2a9e2e; /* New background color for the "C" button */
+    color: white; /* Text color */
+  }
+  
+  button.btn[onclick="deleteDisplay()"]:hover {
+    background-color: #595f5f; /* Hover background color */
+  }
+  
+  
+  
+  
+  button.btn:last-child {
+    background-color: #0c9210;
+    color: white;
+    width: 114px;
+  }
+  
+  
+  button.btn:hover:last-child {
+    background-color: #9dac9d;
+  }
+  
+  
